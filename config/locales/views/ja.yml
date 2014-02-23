@@ -1,0 +1,31 @@
+ja:
+  views:
+    input:
+      create: 登録
+      delete: 削除
+      edit: 編集
+      show: 表示
+      back: 戻る
+
+    label:
+      actions: 戻る
+
+    confirmation:
+      delete: 本当に削除しますか？
+
+    pagination:
+      previous: "前へ"
+      next: "次へ"
+
+    users:
+      actions:
+        index:
+          title:  一覧
+        show:
+          title:  詳細
+        new:
+          title:  新規
+        edit:
+          title:  編集
+      messages:
+        no_results: 'ユーザーが存在しません。'

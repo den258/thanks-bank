@@ -1,0 +1,23 @@
+
+- flash.each do |key, value|
+  %div{class: "alert alert-#{key}"}
+    = value
+
+%br
+
+- if object.class.method_defined?('errors')
+  - unless object.errors.empty?
+    .dropdown
+      %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown"}
+        %button.btn.btn-danger.disabled
+          %span.icon-remove.icon-white
+          &nbsp;
+          =t('views.label.display_error')
+      %ul.dropdown-menu.alert.alert-error.row
+        .span11
+          %p 入力に誤りがあります。
+          %ul
+            - object.errors.full_messages.each do |message|
+              %li.span3= message
+
+%br

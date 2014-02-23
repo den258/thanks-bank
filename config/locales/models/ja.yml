@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      users: ユーザー
+    attributes:
+      users:
+        account_no: 口座番号
+        name: 名前
+        area: 地域
+        memo: 備考

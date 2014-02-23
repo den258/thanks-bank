@@ -9,3 +9,5 @@ rails generate model deal date:datetime name:string first_volume_plus:integer fi
 # 2014/02/23 001
 rails generate model user name:string
 
+# 2014/02/24 001
+rails generate model user account_no:string name:string area:string memo:text

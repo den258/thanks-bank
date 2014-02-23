@@ -43,7 +43,9 @@ gem "mysql2", "0.3.11"
 gem "haml", "4.0.2"
 gem "haml-rails", "0.4"
 gem "simple_form", "2.1.0"
+gem "nested_form"
 
 # gem 'devise'
 # gem 'omniauth-facebook'
 # gem 'omniauth-twitter'
+

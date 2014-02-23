@@ -1,0 +1,35 @@
+
+%section
+  = render 'shared/messages_result', :object => @user
+
+%section
+  / %form.form-horizontal
+  / %form.form-inline
+  / %form
+
+  = simple_form_for @user do | f |
+    %fieldset
+      = f.input :account_no, input_html: {class: 'input-medium'}
+      = f.input :name, input_html: {class: 'input-medium'}
+      = f.input :area, input_html: {class: 'input-medium'}
+      = f.input :memo, input_html: {class: 'input-medium'}
+      = render 'shared/submit', :object => @user, :f => f
+      = link_to users_path, class: 'btn' do
+        = t('views.input.back')
+
+      / .control-group
+      /   %label.control-label 口座番号：
+      /   .controls
+      /     %input{type: 'text', class: 'input-medium focused'}
+      / .control-group
+      /   %label.control-label 名前：
+      /   .controls
+      /     %input{type: 'text', class: 'input-medium focused'}
+      / .control-group
+      /   %label.control-label 地域：
+      /   .controls
+      /     %input{type: 'text', class: 'input-medium focused'}
+      / .control-group
+      /   %label.control-label 備考：
+      /   .controls
+      /     %input{type: 'text', class: 'input-medium focused'}
