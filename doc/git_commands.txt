@@ -1,0 +1,71 @@
+
+# ローカルのブランチをリモートの master に push する
+git push ssh://sqale@gateway.sqale.jp:2222/den258/thanks-bank.git
+
+
+
+
+
+
+# -------------------------------------------
+
+# ブランチの一覧
+git branch
+
+# 設定されているリモートリポジトリの確認
+git remote -v
+
+C:\Users\JMAX\Dropbox\tmp\20130313.001.bldgweb\repo\den259\20130715.001.bldgweb\bldgweb>git remote -v
+origin  git@github.com:den259/bldgweb.git (fetch)
+origin  git@github.com:den258/bldgweb.git (push)
+
+# push 先のリモートリポジトリの変更
+git remote set-url --push origin git@github.com:den258/bldgweb.git
+
+# ローカルのブランチをリモートの master に push する
+git push ssh://sqale@gateway.sqale.jp:2222/den256/bldgweb.git b20130701001:master
+
+# 新しいブランチ名でチェックアウト（ブランチの作成とそのブランチへの移動）する
+git checkout -b b20130715001
+
+# 配下の変更をステージに上げる
+git add .
+
+# コミットエディタを起動し、コミットする
+git commit -a
+
+※ コミットエディタのコマンド
+i
+ 文字列編集モードへ移行し、文字列を挿入する
+esc
+ コマンド入力モードに戻る
+:wq
+ 保存して終了する
+
+# remote -v で確認できる (push) にコードをアップロードする
+git push
+
+# ローカルにリモートのリポジトリをコピーする
+git clone
+
+# ステージに上がっている変更を確認する
+git status
+
+# ローカルの master ブランチを Sqale のリポジトリにプッシュするためのコマンドです。
+git push ssh://sqale@gateway.sqale.jp:2222/den256/bldgweb.git +master
+git push ssh://sqale@gateway.sqale.jp:2222/den256/bldgweb-review.git +master
+
+# マスターブランチへ戻る
+git checkout master
+
+# ブランチを削除する
+git branch -D b20130715001
+
+# メモ
+Github で pull request するためには、新しいブランチを作成し、push すること
+
+# ブランチ b20130730003 を現在、選択しているブランチ(git checkout <branch_name>)とマージする
+git merge b20130730003
+
+# ログを確認する
+git log
