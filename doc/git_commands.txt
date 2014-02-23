@@ -1,6 +1,6 @@
 
 # ローカルのブランチをリモートの master に push する
-git push ssh://sqale@gateway.sqale.jp:2222/den258/thanks-bank.git
+git push ssh://sqale@gateway.sqale.jp:2222/den258/thanks-bank-review.git
 
 
 
