@@ -14,13 +14,14 @@ class UsersController < ApplicationController
   end
 
   def new
+
+    Debug.print 'called new'
+
   end
 
   def create
 
-    puts '@@@@@@@@@@@@@@'
-    puts params
-    puts '@@@@@@@@@@@@@@'
+    Debug.print params.inspect
 
     @user.attributes = params[:user]
     if @user.save

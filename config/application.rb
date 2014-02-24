@@ -5,6 +5,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 require './lib/custom_gem/kaminari-0.14.1/lib/kaminari'
+require './lib/extensions/debug.rb'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -65,5 +66,7 @@ module ThanksBank
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
   end
+
 end

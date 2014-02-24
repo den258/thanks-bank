@@ -1,24 +1,18 @@
-- title @title
-.row
-  .span12
-
-    %section
-      .header
-        = render 'shared/header_menu_administrator_edit_or_show'
-
-    %nav.table-title-02
-      %ul.breadcrumb
-        %li.active
-          = link_to t('views.insurance.insurance_notices.actions.index.title'), [:administrator, :insurance_notices]
-
-    %section
-
-      %article
-        %h2= @notice.title
-
-        .content
-          = simple_format @notice.content
-
-        .actions
-          = link_to t('views.input.edit'), [:edit, :administrator, @notice], class: 'btn mr_5'
-          = link_to t('views.input.back'), [:administrator, :insurance_notices], class: 'btn'
+%section
+  %table
+    %tbody
+      %tr
+        %th= t('activerecord.attributes.users.account_no')
+        %td= @user.account_no
+      %tr
+        %th= t('activerecord.attributes.users.name')
+        %td= @user.name
+      %tr
+        %th= t('activerecord.attributes.users.area')
+        %td= @user.area
+      %tr
+        %th= t('activerecord.attributes.users.memo')
+        %td= @user.memo
+%section
+  = link_to t('views.input.edit'), edit_user_path(@user), class: 'btn'
+  = link_to t('views.input.back'), users_path(@user), class: 'btn'

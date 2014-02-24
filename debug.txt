@@ -1,0 +1,24 @@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+{"utf8"=>"✓", "authenticity_token"=>"lbEVV5mC/X4WKQ0B0xQY76Z49S3/hIc++/WYXQVP9YU=", "user"=>{"account_no"=>"ttttt", "name"=>"ttttt", "area"=>"tttt", "memo"=>"ttttt"}, "commit"=>"登録", "action"=>"create", "controller"=>"users"}
+@@@@@@@@@@
+@@@@@@@@@@
+called new
+@@@@@@@@@@
+@@@@@@@@@@
+{"utf8"=>"✓", "authenticity_token"=>"lbEVV5mC/X4WKQ0B0xQY76Z49S3/hIc++/WYXQVP9YU=", "user"=>{"account_no"=>"1", "name"=>"佐藤順", "area"=>"宇都宮市宝木町", "memo"=>"プログラマ"}, "commit"=>"登録", "action"=>"create", "controller"=>"users"}
+@@@@@@@@@@
