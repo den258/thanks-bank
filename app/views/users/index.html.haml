@@ -2,32 +2,34 @@
   .header
     = link_to new_user_path, class: 'btn btn-primary' do
       = t('views.users.actions.new.title')
+%hr
 
 %section
-  %table.table
-    %thead
-      %tr
-        %th= t('activerecord.attributes.users.account_no')
-        %th= t('activerecord.attributes.users.name')
-        %th= t('activerecord.attributes.users.area')
-        %th= t('views.label.actions')
-    %tbody
-      - unless @users.empty?
-        - @users.each do | user |
-          %tr
-            %td= user.account_no
-            %td= user.name
-            %td= user.area
-            %td
-              = link_to user_path(user), class: 'btn' do
-                = t('views.input.show')
-              = link_to edit_user_path(user), class: 'btn' do
-                = t('views.input.edit')
-              = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
-                = t('views.input.delete')
-      - else
-        %tr
-          %td{colspan: 4}
-            = t('views.users.messages.no_results')
+
+  - unless @users.empty?
+    - @users.each do | user |
+      = t('activerecord.attributes.users.account_no')
+      = ':'
+      = user.account_no
+      %br
+      = t('activerecord.attributes.users.name')
+      = ':'
+      = user.name
+      %br
+      = t('activerecord.attributes.users.area')
+      = ':'
+      = user.area
+      %br
+      = t('views.label.actions')
+      %br
+      = link_to user_path(user), class: 'btn' do
+        = t('views.input.show')
+      %br
+      = link_to edit_user_path(user), class: 'btn' do
+        = t('views.input.edit')
+      %br
+      = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
+        = t('views.input.delete')
+      %hr
 
   = paginate @users

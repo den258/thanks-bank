@@ -1,0 +1,19 @@
+ja:
+  views:
+    input:
+      create: 登録
+      update: 更新
+      delete: 削除
+      edit: 編集
+      show: 表示
+      back: 戻る
+
+    label:
+      actions: 操作
+
+    confirmation:
+      delete: 本当に削除しますか？
+
+    pagination:
+      previous: "前へ"
+      next: "次へ"

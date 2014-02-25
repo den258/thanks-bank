@@ -14,15 +14,10 @@ class UsersController < ApplicationController
   end
 
   def new
-
-    Debug.print 'called new'
-
   end
 
   def create
-
-    Debug.print params.inspect
-
+    # Debug.print params.inspect
     @user.attributes = params[:user]
     if @user.save
       redirect_to @user
