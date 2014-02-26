@@ -9,9 +9,9 @@
 %section
   %form
     - if params[:keyword]
-      %input.span2#search{type:"text", name:"keyword",value: params[:keyword], class:'input-medium'}
+      %input.span2#search{type:"text", name:"keyword", value: params[:keyword]}
     -else
-      %input.span2#search{type:"text", name:"keyword", class:'input-medium'}
+      %input.span2#search{type:"text", name:"keyword"}
     %br
     %input.btn.btn-primary{type:"submit", name:"search", value:"検索"}
 %hr
