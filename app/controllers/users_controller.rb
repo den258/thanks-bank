@@ -5,9 +5,22 @@ class UsersController < ApplicationController
   before_filter :private_new, only: [:new, :create]
 
   def index
+
+    if params[:keyword]
+      sql_where = " account_no like '%#{params[:keyword]}%' "
+      sql_where += " or name like '%#{params[:keyword]}%' "
+      sql_where += " or area like '%#{params[:keyword]}%' "
+      sql_where += " or memo like '%#{params[:keyword]}%' "
+      sql_where += " or give_me like '%#{params[:keyword]}%' "
+      sql_where += " or give_you like '%#{params[:keyword]}%' "
+    end
+
     @users = User
+      .where(sql_where)
+      .order('account_no')
       .page(params[:page])
       .per(params[:lines])
+
   end
 
   def show

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   attr_accessible :area
   attr_accessible :memo
   attr_accessible :name
+  attr_accessible :give_me
+  attr_accessible :give_you
 
   validates :account_no,
     presence: true,

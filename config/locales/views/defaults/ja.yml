@@ -13,6 +13,7 @@ ja:
 
     confirmation:
       delete: 本当に削除しますか？
+      create: 追加すると削除できません。追加しますか？
 
     pagination:
       previous: "前へ"

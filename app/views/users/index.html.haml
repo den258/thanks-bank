@@ -1,7 +1,19 @@
+%hr
+
 %section
-  .header
+  %p
     = link_to new_user_path, class: 'btn btn-primary' do
       = t('views.users.actions.new.title')
+%hr
+
+%section
+  %form
+    - if params[:keyword]
+      %input.span2#search{type:"text", name:"keyword",value: params[:keyword], class:'input-medium'}
+    -else
+      %input.span2#search{type:"text", name:"keyword", class:'input-medium'}
+    %br
+    %input.btn.btn-primary{type:"submit", name:"search", value:"検索"}
 %hr
 
 %section
@@ -43,5 +55,7 @@
       / = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
       /   = t('views.input.delete')
       %hr
+  - else
+    データがありません。
 
   = paginate @users
