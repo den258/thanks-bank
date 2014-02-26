@@ -11,3 +11,8 @@ rails generate model user name:string
 
 # 2014/02/24 001
 rails generate model user account_no:string name:string area:string memo:text
+
+# 2014/02/26 001
+rails generate migration add_give_me_to_user give_me:text
+rails generate migration add_give_you_to_user give_you:text
+

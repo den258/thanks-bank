@@ -20,16 +20,28 @@
       = ':'
       = user.area
       %br
-      = t('views.label.actions')
+      = t('activerecord.attributes.users.memo')
+      = ':'
+      = user.memo
       %br
-      = link_to user_path(user), class: 'btn' do
-        = t('views.input.show')
+      = t('activerecord.attributes.users.give_me')
+      = ':'
+      = user.give_me
+      %br
+      = t('activerecord.attributes.users.give_you')
+      = ':'
+      = user.give_you
+      / %br
+      / = t('views.label.actions')
+      / %br
+      / = link_to user_path(user), class: 'btn' do
+      /   = t('views.input.show')
       %br
       = link_to edit_user_path(user), class: 'btn' do
         = t('views.input.edit')
-      %br
-      = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
-        = t('views.input.delete')
+      / %br
+      / = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
+      /   = t('views.input.delete')
       %hr
 
   = paginate @users

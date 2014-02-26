@@ -9,6 +9,8 @@
       = f.input :name, input_html: {class: 'input-medium'}
       = f.input :area, input_html: {class: 'input-medium'}
       = f.input :memo, :as => :text, :input_html => { class: 'input-medium', :rows => 4 }
+      = f.input :give_me, :as => :text, :input_html => { class: 'input-medium', :rows => 4 }
+      = f.input :give_you, :as => :text, :input_html => { class: 'input-medium', :rows => 4 }
       = render 'shared/submit', :object => @user, :f => f
       = link_to users_path, class: 'btn' do
         = t('views.input.back')

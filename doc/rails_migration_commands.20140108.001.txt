@@ -1,0 +1,351 @@
+
+rails generate model contract bldg_no:string bldg_short_name:string room_no:string contractor:string status:string start:date end:date
+
+rails generate model contract bldg_no:string bldg_short_name:string room_no:string contractor:string status:string start:date end:date
+
+rails generate model income bldg_no:string bldg_short_name:string contract_no:string room_no:string billing_destination:string contractor:string except_bank:integer income_bank:integer except_other:integer income_other:integer income_date:date deposit:integer this_month_receivable:integer
+
+rails generate scaffold property bldg_no:string bldg_short_name:string room_no:string type:string rent:integer condo_fee:integer square_meter:float tsubo:float 
+
+rails generate scaffold topic publish:string icon:string date:date title:string title_color:string body:string body_color:string image1:binary image2:binary image3:binary
+
+rails generate scaffold topic_path topic_id:integer path:string
+
+
+
+
+
+rails generate model contract contract_no:string contractor:references contract_start:date contract_end:date contract_payment_date_string:references billing_destination:string contract_state:references update_notice_date:date decided_rent:integer decided_common_area_fee:integer decided_rent_other:integer decided_update_fee:integer update_fee_payment_date:date contract_target:references
+
+rails generate model contract_payment_date_string name:string
+
+rails generate model contract_target name:string
+
+rails generate model contract_state name:string
+
+
+
+
+
+rails generate model contractor personality:references hirer_name:string hirer_name_kana:string hirer_company:string hirer_branch:string hirer_post:string hirer_address:string hirer_birthday:date hirer_telephone:string hirer_cellular:string working_company:string working_address:string working_telephone:string working_category:string working_department:string working_year:integer working_income:integer lodger1_name:string lodger1_age:string lodger1_sex:references lodger1_relationship:string lodger2_name:string lodger2_age:string lodger2_sex:references lodger2_relationship:string lodger3_name:string lodger3_age:string lodger3_sex:references lodger3_relationship:string lodger4_name:string lodger4_age:string lodger4_sex:references lodger4_relationship:string lodger5_name:string lodger5_age:string lodger5_sex:references lodger5_relationship:string lodger6_name:string lodger6_age:string lodger6_sex:references lodger6_relationship:string sum_of_lodger:integer surety_name:string surety_name_kana:string surety_post:string surety_address:string surety_birthday:date surety_phone:string surety_cellular:string surety_working_company:string surety_working_address:string surety_working_phone:string surety_working_category:string surety_working_department:string surety_working_year:integer surety_working_income:integer management_agency_name:string management_agency_address:string management_agency_phone:string
+
+
+rails generate model user username:string password:string password_confirmation:string active:boolean
+
+rails generate model user role:references username:string password_digest:string active:boolean
+
+rails generate scaffold insurance/property_contract property:references contract:references newest:boolean
+rails generate scaffold insurance/parking_contract parking:references contract:references newest:boolean
+
+rails generate migration AddDetailsToContracts contractor:references
+
+
+rails generate model incurance/income_payor name:string
+rails generate model incurance/income_state name:string
+
+rails generate scaffold insurance/income contract_no:string month:string building_no:string room_no:string date:date estimated_income:integer income:integer electricity_income:integer income_payor:references income_state:references
+
+
+
+
+
+
+
+
+rails generate model user_rank name:string
+rails generate model user_demand_state name:string
+rails generate model user_personality name:string
+
+rails destroy model rank name:string
+rails destroy model demand_status name:string
+rails destroy model personality name:string
+
+rails destroy model insurance/income
+rails destroy model insurance/income_payor
+rails destroy model insurance/income_state
+
+rails generate model income_payor name:string
+rails generate model income_state name:string
+
+rails generate model income month:string contractor:references date:date estimated_income:integer income:integer electricity_income:integer income_payor:references income_state:references
+
+
+rails generate model user_sex name:string
+rails destroy model user_sex name:string
+
+rails generate model lodger_sex name:string
+
+
+rails generate model lodger contractor:references name:string age:string sex:references relationship:string 
+
+
+
+
+
+
+
+rails destroy model contractor
+
+rails generate model contractor_state name:string
+
+rails generate model contractor personality:references contractor_state:references hirer_name:string hirer_name_kana:string hirer_company:string hirer_branch:string hirer_post:string hirer_address:string hirer_birthday:date hirer_telephone:string hirer_cellular:string working_company:string working_address:string working_telephone:string working_category:string working_department:string working_year:integer working_income:integer sum_of_lodger:integer surety_name:string surety_name_kana:string surety_post:string surety_address:string surety_birthday:date surety_phone:string surety_cellular:string surety_working_company:string surety_working_address:string surety_working_phone:string surety_working_category:string surety_working_department:string surety_working_year:integer surety_working_income:integer management_agency_name:string management_agency_address:string management_agency_phone:string
+
+
+
+
+
+
+
+rails destroy model user
+
+rails generate model user user_role:references personality:references user_rank:references company:string branch:string person:string cellular:string post:string address:string telephone:string fax:string mail:string homepage:string username:string password_digest:string user_demand_state:references demand_date:date notes:string active:boolean
+
+rails destroy model role name:string
+rails generate model user_role name:string
+
+rails generate model property_confirm name:string
+rails generate model property_clean name:string
+rails generate model property_reform name:string
+
+rails generate migration AddPropertyConfirmIdToProperties property_confirm_id:integer
+rails generate migration AddPropertyCleanIdToProperties property_clean_id:integer
+rails generate migration AddPropertyReformIdToProperties property_reform_id:integer
+
+rails generate migration RemoveConfirmedFromProperties confirmed:boolean
+rails generate migration RemoveCleanedFromProperties cleaned:boolean
+rails generate migration RemoveReformedFromProperties reformed:boolean
+
+
+rails generate model property_layout name:string
+rails generate migration AddPropertyLayoutIdToProperties property_layout_id:integer
+rails generate migration RemoveLayoutFromProperties layout:boolean
+
+rails generate model viewing_offer date:date time:time company:references memo:string
+
+rails g migration RenamePasswordToCompany password_digest:string
+
+rails g migration RemovePersonalityIdFromUsers
+rails g migration RemoveUserRankIdFromUsers
+rails g migration RemoveUserDemandStateIdFromUsers
+rails g migration RemoveUserDemandDateFromUsers
+
+rails destroy migration RemoveUserRankIdFromUsers
+rails destroy migration RemoveUserDemandStateIdFromUsers
+rails destroy migration RemoveUserDemandDateFromUsers
+
+rails destroy migration RenamePasswordToCompany
+
+rails g migration RemoveCompanyIdFromCompanies
+
+rails generate model company_type name:string
+
+
+rails generate model building_summary_owner name:string
+rails generate model building_summary_use_district name:string
+
+rails generate model building_summary getting_info_date:date building_name:string address:string traffic:string site_space:float building_space:float total_floor_space:float building_summary_use_district:references building_to_land_ratio:float floor_area_ratio:float sales_value:integer yearly_income:integer single_benefit:float area_average:float area_max:float area_min:float layout_average:references layout_max:references layout_min:references accounts_info:string getting_info_person:string designer:string contractor:string completion_date:date other_info:string building_summary_owner:references
+
+
+
+rails generate migration RemoveRegisterFromTodo register:integer
+rails generate migration AddRegistant_idToTodo registant_id:integer
+rails generate migration RemoveUser_idFromParticipant user_id:integer
+rails generate migration AddParticipant_idToParticipant participant_id:integer
+
+rails generate migration RemoveBodyFromTodo body:string
+rails generate migration AddBodyToTodo body:text
+rails destroy migration AddBodyToTodo
+rails destroy migration BodyFromTodo
+
+rails generate migration remove_layout_average_id_from_building_summary
+rails generate migration remove_layout_max_id_from_building_summary
+rails generate migration remove_layout_min_id_from_building_summary
+rails generate migration add_building_summary_layout_average_id_to_building_summary building_summary_layout_average_id:integer
+rails generate migration add_building_summary_layout_max_id_to_building_summary building_summary_layout_max_id:integer
+rails generate migration add_building_summary_layout_min_id_to_building_summary building_summary_layout_min_id:integer
+
+rails generate migration remove_decided_update_fee_from_contract
+rails generate migration add_decided_fee_columns_to_contract decided_membership_fee:integer
+
+rails generate model topic_publish name:string
+rails generate model topic_icon name:string
+rails generate model topic topic_publish:references topic_icon:references date:date title:string title_color:string body:text body_color:string
+rails generate model topic_path topic:references path:string
+
+rails generate model demand_state name:string
+rails generate migration RemoveDemandStatusFromCompany demand_status:string
+rails generate migration AddDemandStateToCompany demand_state:references
+
+rails generate migration DropViewingOfferTable
+
+rails generate migration add_memo_to_property_inspection memo:text
+
+rails generate model publish name:string
+rails generate model campaign publish:references
+rails generate model campaign_path campaign:references path:string
+rails generate migration DropTopicPublishTable
+rails generate migration DropViewingOfferTable
+rails generate migration RemoveTopicPublishFromTopic topic_publish:integer
+rails generate migration AddPublishToTopic publish:references
+
+rails generate migration AddMailToUser mail:string
+
+rails generate migration rename_contractor_id_to_log_ref company_id:integer
+rails generate migration rename_user_id_to_log_login company_id:integer
+
+rails generate migration add_user_id_to_participant user_id:integer
+
+rails generate migration RemoveBuildingIdFromLogRef building_id:integer
+rails generate migration rename_room_id_to_log_ref property_id:integer
+
+2013/09/26 001
+rails generate model accounts_title_group name:string
+rails generate model accounts_title name:string parent:references accounts_title_group:references
+rails generate model other_cost building:references month:integer account_title:references value:integer
+rails generate model other_income building:references month:integer account_title:references value:integer
+
+2013/09/26 002
+rails generate migration add_class_name_flag_to_accounts_title class_name_flag:boolean
+
+2013/09/26 003
+rails generate migration rename_account_title_to_other_cost accounts_title_id:integer
+rails generate migration rename_account_title_to_other_income accounts_title_id:integer
+
+2013/09/26 004
+rails generate migration rename_class_name_flag_to_accounts_title is_class_name_flag:boolean
+
+2013/09/27 001
+rails generate migration remove_decided_update_fee_from_contract decided_update_fee:integer
+
+2013/09/27 002
+rails generate migration add_surety_type_to_contractor surety_type_id:integer
+rails generate migration add_surety_company_to_contractor surety_company:string
+rails generate migration add_surety_branch_to_contractor surety_branch:string
+rails generate model surety_type name:string
+
+2013/09/30 001
+rails generate migration remove_contract_id_from_income contract_id:integer
+
+2013/09/30 002
+rails generate migration add_cancel_on_to_contract cancel_on:date
+
+2013/10/01 001
+rails generate model parking_type name:string
+rails generate migration add_parking_type_id_to_parking_contract parking_type_id:integer
+rails generate migration remove_contract_target_id_from_contract contract_target_id:integer
+rails generate migration add_property_id_to_contract property_id:integer
+rails generate migration drop_property_contracts_table
+
+2013/10/01 002
+rails generate migration drop_contractor_state_table
+rails generate migration remove_contractor_state_id_from_contractor contractor_state_id:integer
+
+2013/10/05 001
+rails generate migration rename_user_demand_states_to_company_demand_states
+rails generate migration drop_company_demand_states_table
+
+2013/10/05 002
+rails generate migration drop_company_demand_states_table
+rails generate migration drop_contract_targets_table
+rails generate migration drop_contractor_states_table
+rails generate migration drop_property_contracts_table
+rails generate migration drop_parking_types_table
+rails generate migration drop_topic_publishs_table
+rails destroy migration drop_contractor_states_table
+rails destroy migration drop_topic_publishs_table
+
+2013/10/07 001
+rails generate model company_rank name:string
+rails generate migration rename_rank_to_company company_rank:integer
+rails generate migration rename_company_rank_to_company company_rank_id:integer
+
+2013/10/08 001
+rails generate migration remove_company_rank_id_from_company company_rank_id:string
+rails generate migration add_company_rank_id_from_company company_rank_id:integer
+
+2013/10/09 001
+rails generate model reapir_cost repair_name:string cost:integer contract:references
+rails generate model repair_cost repair_name:string cost:integer contract:references
+rails generate migration drop_reapir_costs_table
+
+2013/10/11 001
+rails generate model contract_for_property contract_no:string contractor_id:integer contract_start:date contract_end:date contract_payment_date_string_id:integer billing_destination:string contract_state_id:integer update_notice_date:date decided_rent:integer decided_common_area_fee:integer decided_rent_other:integer decided_membership_fee:integer decided_deposit:integer decided_key_money:integer decided_repair_cost:integer decided_key_cost:integer decided_renewal_fee:integer update_fee_payment_date:date property_id:integer cancel_offer_date:date vacate_date:date rent_burden_end_date:date last_pay_date:date
+rails generate model contract_for_parking contract_no:string contractor_id:integer contract_start:date contract_end:date contract_payment_date_string_id:integer billing_destination:string contract_state_id:integer update_notice_date:date decided_rent:integer update_fee_payment_date:date
+rails destroy migration create_contract_for_properties
+rails destroy migration create_contract_for_parkings
+rails destroy migration create_contract_targets
+rails generate model contract_target name:string
+rails generate migration add_contract_target_id_to_contract contract_target_id:integer
+
+2013/10/15 001
+rails generate migration add_cancel_offer_date_to_contract cancel_offer_date:date
+rails generate migration add_vacate_date_to_contract vacate_date:date
+rails generate migration add_rent_burden_end_date_to_contract rent_burden_end_date:date
+rails generate migration add_last_pay_date_to_contract last_pay_date:string
+
+2013/10/18 001
+rails generate migration add_decided_parking_fee_to_contract decided_parking_fee:integer
+
+2013/10/18 002
+rails generate migration add_decided_parking_deposit_to_contract decided_parking_deposit:integer
+rails generate migration add_decided_water_rate_to_contract decided_water_rate:integer
+
+2013/10/23 001
+rails generate migration add_income_to_overdue income:integer
+
+2013/10/25 001
+rails generate migration add_contract_id_to_overdue contract_id:integer
+rails generate migration add_contract_id_to_income contract_id:integer
+rails generate migration remove_contractor_id_from_overdue contractor_id:string
+rails generate migration remove_contractor_id_from_income contractor_id:string
+
+2013/10/28 001
+rails generate migration add_decided_membership_fee_per_month_to_contract decided_membership_fee_per_month:integer
+rails generate migration add_decided_membership_fee_per_year_to_contract decided_membership_fee_per_year:integer
+rails generate migration remove_decided_membership_fee_from_contract decided_membership_fee:integer
+rails generate model membership_fee_per_month_or_year name:string
+rails generate migration add_membership_fee_per_month_or_year_to_contract membership_fee_per_month_or_year_id:integer
+
+2013/10/29 001
+rails generate model deposit_adjust contract_id:integer keeping_deposit:integer keeping_deposit_months:integer keeping_rent:integer keeping_rent_months:integer keeping_rent_days:integer keeping_common_fee:integer keeping_common_fee_months:integer keeping_common_fee_days:integer keeping_parking_deposit:integer keeping_parking_fee:integer keeping_parking_fee_months:integer keeping_parking_fee_days:integer keeping_membership_fee:integer keeping_water_fee:integer balancing_rent:integer balancing_rent_days:integer balancing_common_fee:integer balancing_common_fee_days:integer balancing_parking_fee:integer balancing_parking_fee_days:integer balancing_rent_fee_part:integer balancing_rent_fee_part_days:integer balancing_key_return_fee:integer balancing_water_fee:integer balancing_overdue:integer
+rails generate migration add_some_columns_to_contract some_columns:integer
+rails generate migration drop_deposit_adjusts_table
+
+2013/10/31 001
+rails generate migration remove_cancel_on_from_contract cancel_on:date
+
+2013/11/20 001
+rails generate migration add_lodger_sex_id_to_lodger lodger_sex_id:integer
+rails generate migration remove_sex_id_from_lodger sex_id:integer
+
+2013/11/25 001
+rails generate migration add_parent_id_to_section parent_id:integer
+rails generate migration remove_parent_from_section parent:integer
+
+2013/11/26 001
+rails generate migration drop_user_rank_table
+
+2013/12/03 001
+rails generate migration add_user_id_to_contract user_id:integer
+
+2013/12/26 001
+rails generate migration add_lender_zipcode_to_statement lender_zipcode:string
+rails generate migration add_lender_address_to_statement lender_address:string
+rails generate migration add_lender_name_to_statement lender_name:string
+rails generate migration remove_lender_from_statement lender:string
+
+2014/01/07 001
+rails generate migration add_summary_to_building summary:text
+
+2014/01/08 001
+rails generate migration change_decimal_for_property_area_in_tsubo
+rails generate migration change_decimal_for_property_area_in_square_meter
+
+2014/02/01 001
+rails generate migration remove_contract_target_id_from_contract contract_target_id:integer
+rails generate migration remove_parking_type_id_from_parking_contract parking_type_id:integer
+
+2014/02/15 001
+rails generate migration add_treatment_target_id_to_income treatment_target_id:integer
+rails generate migration drop_income_log_table
+rails generate migration drop_contract_target_table
