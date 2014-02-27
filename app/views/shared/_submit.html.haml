@@ -1,0 +1,5 @@
+/ = f.submit object.new_record? ? t('views.input.create') : t('views.input.update'), class: 'btn btn-primary', id: object.new_record? ? 'submit_create':'submit_edit'
+= f.submit object.new_record? ? t('views.input.create') : t('views.input.update'), |
+    confirm: object.new_record? ? t('views.confirmation.create') : nil, |
+    class: 'btn btn-primary', |
+    id: object.new_record? ? 'submit_create':'submit_edit'

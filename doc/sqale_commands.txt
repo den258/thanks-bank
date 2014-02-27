@@ -1,0 +1,3 @@
+
+# bldgweb-review
+mysql -hmysql001.sqale.jp -usqale_4714149cc8 -pad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9

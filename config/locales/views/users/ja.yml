@@ -1,0 +1,14 @@
+ja:
+  views:
+    users:
+      actions:
+        index:
+          title:  一覧
+        show:
+          title:  詳細
+        new:
+          title:  新規
+        edit:
+          title:  編集
+      messages:
+        no_results: 'ユーザーが存在しません。'

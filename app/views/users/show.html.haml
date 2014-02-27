@@ -1,0 +1,24 @@
+%section
+  %table
+    %tbody
+      %tr
+        %th= t('activerecord.attributes.users.account_no')
+        %td= @user.account_no
+      %tr
+        %th= t('activerecord.attributes.users.name')
+        %td= @user.name
+      %tr
+        %th= t('activerecord.attributes.users.area')
+        %td= @user.area
+      %tr
+        %th= t('activerecord.attributes.users.memo')
+        %td= @user.memo
+      %tr
+        %th= t('activerecord.attributes.users.give_me')
+        %td= @user.give_me
+      %tr
+        %th= t('activerecord.attributes.users.give_you')
+        %td= @user.give_you
+%section
+  = link_to t('views.input.edit'), edit_user_path(@user), class: 'btn'
+  = link_to t('views.input.back'), users_path(@user), class: 'btn'

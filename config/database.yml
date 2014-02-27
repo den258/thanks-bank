@@ -1,0 +1,23 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  username: sqale_4714149cc8
+  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
+  database: sqale_4714149cc8
+  host: mysql001.sqale.jp
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  username: sqale_4714149cc8
+  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
+  database: sqale_4714149cc8
+  host: mysql001.sqale.jp
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  username: sqale_4714149cc8
+  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
+  database: sqale_4714149cc8
+  host: mysql001.sqale.jp

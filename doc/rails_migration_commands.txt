@@ -1,0 +1,18 @@
+
+# 2014/02/21 001
+rails generate model user name:string
+rails generate model deal date:datetime name:string first_volume:integer second_volume:integer balance:integer self_id:integer client_id:integer memo:text
+
+# 2014/02/22 001
+rails generate model deal date:datetime name:string first_volume_plus:integer first_volume_minus:integer second_volume:integer balance:integer producer_id:integer customer_id:integer memo:text
+
+# 2014/02/23 001
+rails generate model user name:string
+
+# 2014/02/24 001
+rails generate model user account_no:string name:string area:string memo:text
+
+# 2014/02/26 001
+rails generate migration add_give_me_to_user give_me:text
+rails generate migration add_give_you_to_user give_you:text
+
