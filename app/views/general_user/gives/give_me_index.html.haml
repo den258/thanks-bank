@@ -1,0 +1,12 @@
+%hr
+
+%section
+  %div.alert.alert-info
+    Give me（私に与えるもの）
+
+%section
+  - @gives.each do | give |
+    = link_to general_user_give_me_account_no_index_path(give_me: give), class: 'btn' do
+      = give
+
+%hr

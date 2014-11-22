@@ -3,7 +3,7 @@
   = render 'shared/messages_result', :object => @user
 
 %section
-  = simple_form_for @user do | f |
+  = simple_form_for [:administrator, @user] do | f |
     %fieldset
       = f.input :account_no, input_html: {class: 'input-medium'}
       = f.input :name, input_html: {class: 'input-medium'}
@@ -12,5 +12,5 @@
       = f.input :give_me, :as => :text, :input_html => { class: 'input-medium', :rows => 4 }
       = f.input :give_you, :as => :text, :input_html => { class: 'input-medium', :rows => 4 }
       = render 'shared/submit', :object => @user, :f => f
-      = link_to users_path, class: 'btn' do
+      = link_to administrator_users_path, class: 'btn' do
         = t('views.input.back')

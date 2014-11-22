@@ -1,0 +1,12 @@
+%hr
+
+%section
+  %div.alert.alert-info
+    AccountNo（会員番号）
+
+%section
+  - @account_no_set.each do | account_no |
+    %span.btn
+      = account_no
+
+%hr

@@ -2,7 +2,7 @@
 
 %section
   %p
-    = link_to new_user_path, class: 'btn btn-primary' do
+    = link_to new_administrator_user_path, class: 'btn btn-primary' do
       = t('views.users.actions.new.title')
 %hr
 
@@ -46,13 +46,13 @@
       / %br
       / = t('views.label.actions')
       / %br
-      / = link_to user_path(user), class: 'btn' do
+      / = link_to administrator_user_path(user), class: 'btn' do
       /   = t('views.input.show')
       %br
-      = link_to edit_user_path(user), class: 'btn' do
+      = link_to edit_administrator_user_path(user), class: 'btn' do
         = t('views.input.edit')
       / %br
-      / = link_to user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
+      / = link_to administrator_user_path(user), method: :delete, confirm: t('views.confirmation.delete'), class: 'btn btn-danger' do
       /   = t('views.input.delete')
       %hr
   - else

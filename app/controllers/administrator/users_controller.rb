@@ -1,5 +1,5 @@
 
-class UsersController < ApplicationController
+class Administrator::UsersController < Administrator::AdministratorController
 
   before_filter :private_load, only: [:show, :edit, :update, :destroy]
   before_filter :private_new, only: [:new, :create]
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     # Debug.print params.inspect
     @user.attributes = params[:user]
     if @user.save
-      redirect_to @user
+      redirect_to [:administrator, @user]
     else
       render :new
     end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      redirect_to @user
+      redirect_to [:administrator, @user]
     else
       render :edit
     end
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path
+    redirect_to administrator_users_path
   end
 
   private

@@ -1,23 +1,29 @@
 development:
   adapter: mysql2
   encoding: utf8
-  username: sqale_4714149cc8
-  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
-  database: sqale_4714149cc8
-  host: mysql001.sqale.jp
+  reconnect: false
+  database: thanks-bank_development
+  pool: 5
+  username: railsuser
+  password: railspass
+  host: localhost
 
 test:
   adapter: mysql2
   encoding: utf8
-  username: sqale_4714149cc8
-  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
-  database: sqale_4714149cc8
-  host: mysql001.sqale.jp
+  reconnect: false
+  database: thanks-bank_test
+  pool: 5
+  username: railsuser
+  password: railspass
+  host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  username: sqale_4714149cc8
-  password: ad6244758db45cbc0612f7a6acbd4fa333d57e528309a4b9
-  database: sqale_4714149cc8
-  host: mysql001.sqale.jp
+  reconnect: false
+  database: thanks-bank_production
+  pool: 5
+  username: railsuser
+  password: railspass
+  host: localhost

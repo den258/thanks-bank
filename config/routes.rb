@@ -55,8 +55,28 @@ ThanksBank::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
 
-  resources :users
+  root to: 'menus#index'
 
-  match ':controller(/:action(/:id))(.:format)'
+  namespace :administrator do
+
+    resources :logins, only: [ :new, :create, :destroy ]
+
+    resources :users
+
+  end
+
+  namespace :general_user do
+
+    match 'give_you_index', to: 'gives#give_you_index', as: 'give_you_index', via: :get
+    match 'give_me_index', to: 'gives#give_me_index', as: 'give_me_index', via: :get
+
+    match 'give_you_account_no_index', to: 'gives#give_you_account_no_index', as: 'give_you_account_no_index', via: :get
+    match 'give_me_account_no_index', to: 'gives#give_me_account_no_index', as: 'give_me_account_no_index', via: :get
+
+  end
+
+  match 'menus', to: 'menus#index', as: 'index', via: :get
+
+  # match ':controller(/:action(/:id))(.:format)'
 
 end
