@@ -20,5 +20,5 @@
         %th= t('activerecord.attributes.users.give_you')
         %td= @user.give_you
 %section
-  = link_to t('views.input.edit'), edit_user_path(@user), class: 'btn'
-  = link_to t('views.input.back'), users_path(@user), class: 'btn'
+  = link_to t('views.input.edit'), edit_administrator_user_path(@user), class: 'btn'
+  = link_to t('views.input.back'), administrator_users_path(@user), class: 'btn'
